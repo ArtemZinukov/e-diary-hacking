@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e173ebe-bd09-4df6-9c88-9e8c18c8dc6c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/E-diary.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e-diary/README1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/e-diary/scripts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e-diary/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/e-diary/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e-diary/datacenter/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/e-diary/datacenter/models.py" afterDir="false" />
+    <list default="true" id="5e173ebe-bd09-4df6-9c88-9e8c18c8dc6c" name="Changes" comment="Add scripts">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +20,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/e-diary" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -59,9 +50,18 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true"
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "A:/Курс DEVMAN/Lesson 3.E-diary hacking/E-diary"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="A:\Курс DEVMAN\Lesson 3.E-diary hacking\E-diary" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="A:\Курс DEVMAN\Lesson 3.E-diary hacking\E-diary" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -78,9 +78,20 @@
       <option name="presentableId" value="Default" />
       <updated>1715177058735</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add scripts">
+      <option name="closed" value="true" />
+      <created>1715235081986</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715235081986</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add scripts" />
   </component>
 </project>
