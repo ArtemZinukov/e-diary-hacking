@@ -14,7 +14,7 @@ python manage.py shell
 ```
 - Далее загрузить скрипт в консоль:
 ```
-from scripts import definition_schoolkid, fix_marks, remove_chastisements, get_subject, create_commendation
+from scripts import determine_schoolkid, fix_marks, remove_chastisements, get_subject, create_commendation
 ```
 
 ### Как пользоваться скриптом
