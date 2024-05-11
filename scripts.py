@@ -1,7 +1,7 @@
-from datacenter.models import *
-from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 import random
 
+from datacenter.models import (Chastisement, Commendation, Lesson, Mark,
+                               Schoolkid, Subject, Teacher)
 
 STUDENT_PRAISES = ["Молодец!", "Отлично!", "Хорошо!", "Гораздо лучше, чем я ожидал!",
                    "Ты меня приятно удивил!", "Великолепно!", "Прекрасно!", "Ты меня очень обрадовал!",
@@ -12,22 +12,22 @@ STUDENT_PRAISES = ["Молодец!", "Отлично!", "Хорошо!", "Го�
 
 def definition_schoolkid(name):
     try:
-        name = Schoolkid.objects.get(full_name__contains=name)
-        return name
+        name_schoolkid = Schoolkid.objects.get(full_name__contains=name)
+        return name_schoolkid
     except Schoolkid.DoesNotExist:
-        print(f"Ученик с именем {name} в БД не найден!")
+        print(f"Ученик с именем {name_schoolkid} в БД не найден!")
     except Schoolkid.MultipleObjectsReturned:
-        print(f"Найдено несколько учеников с таким именем {name}")
+        print(f"Найдено несколько учеников с таким именем {name_schoolkid}")
 
 
 def fix_marks(schoolkid):
-    name = definition_schoolkid(schoolkid)
-    Mark.objects.filter(schoolkid=name, points__lte=3).update(points=5)
+    name_schoolkid = definition_schoolkid(schoolkid)
+    Mark.objects.filter(schoolkid=name_schoolkid, points__lte=3).update(points=5)
 
 
 def remove_chastisements(schoolkid):
-    name = definition_schoolkid(schoolkid)
-    Chastisement.objects.filter(schoolkid=name).delete()
+    name_schoolkid = definition_schoolkid(schoolkid)
+    Chastisement.objects.filter(schoolkid=name_schoolkid).delete()
 
 
 def get_subject(subject, schoolkid):
@@ -39,10 +39,10 @@ def get_subject(subject, schoolkid):
 
 
 def create_commendation(schoolkid, subject):
-    name = definition_schoolkid(schoolkid)
-    subject = get_subject(subject, name)
-    lesson = Lesson.objects.filter(year_of_study=name.year_of_study, subject=subject).order_by('?').first()
+    name_schoolkid = definition_schoolkid(schoolkid)
+    subject = get_subject(subject, name_schoolkid)
+    lesson = Lesson.objects.filter(year_of_study=name_schoolkid.year_of_study, subject=subject).order_by('?').first()
     if lesson:
-        Commendation.objects.filter(schoolkid=name, subject=subject).create(text=random.choice(STUDENT_PRAISES),
-                                                                            schoolkid=name, subject=subject,
+        Commendation.objects.filter(schoolkid=name_schoolkid, subject=subject).create(text=random.choice(STUDENT_PRAISES),
+                                                                            schoolkid=name_schoolkid, subject=subject,
                                                                             teacher=lesson.teacher, created=lesson.date)
