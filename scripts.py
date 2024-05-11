@@ -10,7 +10,7 @@ STUDENT_PRAISES = ["Молодец!", "Отлично!", "Хорошо!", "Го�
                    "Ты сегодня прыгнул выше головы!", "Я поражен!", "Уже существенно лучше!"]
 
 
-def definition_schoolkid(name):
+def determine_schoolkid(name):
     try:
         name_schoolkid = Schoolkid.objects.get(full_name__contains=name)
         return name_schoolkid
@@ -21,12 +21,12 @@ def definition_schoolkid(name):
 
 
 def fix_marks(schoolkid):
-    name_schoolkid = definition_schoolkid(schoolkid)
+    name_schoolkid = determine_schoolkid(schoolkid)
     Mark.objects.filter(schoolkid=name_schoolkid, points__lte=3).update(points=5)
 
 
 def remove_chastisements(schoolkid):
-    name_schoolkid = definition_schoolkid(schoolkid)
+    name_schoolkid = determine_schoolkid(schoolkid)
     Chastisement.objects.filter(schoolkid=name_schoolkid).delete()
 
 
@@ -39,7 +39,7 @@ def get_subject(subject, schoolkid):
 
 
 def create_commendation(schoolkid, subject):
-    name_schoolkid = definition_schoolkid(schoolkid)
+    name_schoolkid = determine_schoolkid(schoolkid)
     subject = get_subject(subject, name_schoolkid)
     lesson = Lesson.objects.filter(year_of_study=name_schoolkid.year_of_study, subject=subject).order_by('?').first()
     if lesson:
